@@ -1,0 +1,663 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "Copy",
+        "typeProperties": {
+          "source": {
+            "type": "RestSource",
+            "requestMethod": "GET",
+            "httpRequestTimeout": "00:01:40",
+            "requestInterval": "00.00:00:00.010",
+            "datasetSettings": {
+              "type": "RestResource",
+              "schema": [],
+              "externalReferences": {
+                "connection": "0be495b5-d479-4bfd-952c-96b1177022fa"
+              },
+              "annotations": []
+            }
+          },
+          "sink": {
+            "type": "LakehouseTableSink",
+            "tableActionOption": "OverwriteSchema",
+            "partitionOption": "None",
+            "datasetSettings": {
+              "type": "LakehouseTable",
+              "typeProperties": {
+                "table": "starlink_pip"
+              },
+              "schema": [],
+              "linkedService": {
+                "name": "lkh_bronze__space_x",
+                "properties": {
+                  "type": "Lakehouse",
+                  "typeProperties": {
+                    "artifactId": "4ea277c0-aa07-4405-a212-fe8030749e18",
+                    "workspaceId": "00000000-0000-0000-0000-000000000000",
+                    "rootFolder": "Tables"
+                  },
+                  "annotations": []
+                }
+              },
+              "annotations": []
+            }
+          },
+          "translator": {
+            "type": "TabularTranslator",
+            "mappings": [
+              {
+                "source": {
+                  "name": "spaceTrack.CCSDS_OMM_VERS",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "spaceTrack.CCSDS_OMM_VERS",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "spaceTrack.COMMENT",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "spaceTrack.COMMENT",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "spaceTrack.CREATION_DATE",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "spaceTrack.CREATION_DATE",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "spaceTrack.ORIGINATOR",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "spaceTrack.ORIGINATOR",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "spaceTrack.OBJECT_NAME",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "spaceTrack.OBJECT_NAME",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "spaceTrack.OBJECT_ID",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "spaceTrack.OBJECT_ID",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "spaceTrack.CENTER_NAME",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "spaceTrack.CENTER_NAME",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "spaceTrack.REF_FRAME",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "spaceTrack.REF_FRAME",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "spaceTrack.TIME_SYSTEM",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "spaceTrack.TIME_SYSTEM",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "spaceTrack.MEAN_ELEMENT_THEORY",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "spaceTrack.MEAN_ELEMENT_THEORY",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "spaceTrack.EPOCH",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "spaceTrack.EPOCH",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "spaceTrack.MEAN_MOTION",
+                  "type": "Double"
+                },
+                "sink": {
+                  "name": "spaceTrack.MEAN_MOTION",
+                  "physicalType": "double"
+                }
+              },
+              {
+                "source": {
+                  "name": "spaceTrack.ECCENTRICITY",
+                  "type": "Double"
+                },
+                "sink": {
+                  "name": "spaceTrack.ECCENTRICITY",
+                  "physicalType": "double"
+                }
+              },
+              {
+                "source": {
+                  "name": "spaceTrack.INCLINATION",
+                  "type": "Double"
+                },
+                "sink": {
+                  "name": "spaceTrack.INCLINATION",
+                  "physicalType": "double"
+                }
+              },
+              {
+                "source": {
+                  "name": "spaceTrack.RA_OF_ASC_NODE",
+                  "type": "Double"
+                },
+                "sink": {
+                  "name": "spaceTrack.RA_OF_ASC_NODE",
+                  "physicalType": "double"
+                }
+              },
+              {
+                "source": {
+                  "name": "spaceTrack.ARG_OF_PERICENTER",
+                  "type": "Double"
+                },
+                "sink": {
+                  "name": "spaceTrack.ARG_OF_PERICENTER",
+                  "physicalType": "double"
+                }
+              },
+              {
+                "source": {
+                  "name": "spaceTrack.MEAN_ANOMALY",
+                  "type": "Double"
+                },
+                "sink": {
+                  "name": "spaceTrack.MEAN_ANOMALY",
+                  "physicalType": "double"
+                }
+              },
+              {
+                "source": {
+                  "name": "spaceTrack.EPHEMERIS_TYPE",
+                  "type": "Int64"
+                },
+                "sink": {
+                  "name": "spaceTrack.EPHEMERIS_TYPE",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "spaceTrack.CLASSIFICATION_TYPE",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "spaceTrack.CLASSIFICATION_TYPE",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "spaceTrack.NORAD_CAT_ID",
+                  "type": "Int64"
+                },
+                "sink": {
+                  "name": "spaceTrack.NORAD_CAT_ID",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "spaceTrack.ELEMENT_SET_NO",
+                  "type": "Int64"
+                },
+                "sink": {
+                  "name": "spaceTrack.ELEMENT_SET_NO",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "spaceTrack.REV_AT_EPOCH",
+                  "type": "Int64"
+                },
+                "sink": {
+                  "name": "spaceTrack.REV_AT_EPOCH",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "spaceTrack.BSTAR",
+                  "type": "Double"
+                },
+                "sink": {
+                  "name": "spaceTrack.BSTAR",
+                  "physicalType": "double"
+                }
+              },
+              {
+                "source": {
+                  "name": "spaceTrack.MEAN_MOTION_DOT",
+                  "type": "Double"
+                },
+                "sink": {
+                  "name": "spaceTrack.MEAN_MOTION_DOT",
+                  "physicalType": "double"
+                }
+              },
+              {
+                "source": {
+                  "name": "spaceTrack.MEAN_MOTION_DDOT",
+                  "type": "Double"
+                },
+                "sink": {
+                  "name": "spaceTrack.MEAN_MOTION_DDOT",
+                  "physicalType": "double"
+                }
+              },
+              {
+                "source": {
+                  "name": "spaceTrack.SEMIMAJOR_AXIS",
+                  "type": "Double"
+                },
+                "sink": {
+                  "name": "spaceTrack.SEMIMAJOR_AXIS",
+                  "physicalType": "double"
+                }
+              },
+              {
+                "source": {
+                  "name": "spaceTrack.PERIOD",
+                  "type": "Double"
+                },
+                "sink": {
+                  "name": "spaceTrack.PERIOD",
+                  "physicalType": "double"
+                }
+              },
+              {
+                "source": {
+                  "name": "spaceTrack.APOAPSIS",
+                  "type": "Double"
+                },
+                "sink": {
+                  "name": "spaceTrack.APOAPSIS",
+                  "physicalType": "double"
+                }
+              },
+              {
+                "source": {
+                  "name": "spaceTrack.PERIAPSIS",
+                  "type": "Double"
+                },
+                "sink": {
+                  "name": "spaceTrack.PERIAPSIS",
+                  "physicalType": "double"
+                }
+              },
+              {
+                "source": {
+                  "name": "spaceTrack.OBJECT_TYPE",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "spaceTrack.OBJECT_TYPE",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "spaceTrack.RCS_SIZE",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "spaceTrack.RCS_SIZE",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "spaceTrack.COUNTRY_CODE",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "spaceTrack.COUNTRY_CODE",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "spaceTrack.LAUNCH_DATE",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "spaceTrack.LAUNCH_DATE",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "spaceTrack.SITE",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "spaceTrack.SITE",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "spaceTrack.DECAY_DATE",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "spaceTrack.DECAY_DATE",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "spaceTrack.DECAYED",
+                  "type": "Int64"
+                },
+                "sink": {
+                  "name": "spaceTrack.DECAYED",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "spaceTrack.FILE",
+                  "type": "Int64"
+                },
+                "sink": {
+                  "name": "spaceTrack.FILE",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "spaceTrack.GP_ID",
+                  "type": "Int64"
+                },
+                "sink": {
+                  "name": "spaceTrack.GP_ID",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "spaceTrack.TLE_LINE0",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "spaceTrack.TLE_LINE0",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "spaceTrack.TLE_LINE1",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "spaceTrack.TLE_LINE1",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "spaceTrack.TLE_LINE2",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "spaceTrack.TLE_LINE2",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "launch",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "launch",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "version",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "version",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "height_km",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "height_km",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "latitude",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "latitude",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "longitude",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "longitude",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "velocity_kms",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "velocity_kms",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "id",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "id",
+                  "physicalType": "string"
+                }
+              }
+            ],
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            },
+            "columnFlattenSettings": {
+              "treatArrayAsString": false,
+              "treatStructAsString": false,
+              "flattenColumnDelimiter": "."
+            }
+          },
+          "enableStaging": false
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Copy_starlink_data",
+        "dependsOn": [
+          {
+            "activity": "Save_run_start",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "Teams",
+        "typeProperties": {
+          "inputs": {
+            "body": {},
+            "method": "post",
+            "path": ""
+          }
+        },
+        "name": "Failure_notification",
+        "description": "placeholder",
+        "dependsOn": [
+          {
+            "activity": "Copy_starlink_data",
+            "dependencyConditions": [
+              "Failed"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "Script",
+        "typeProperties": {
+          "scripts": [
+            {
+              "text": {
+                "value": "select 1 from 1",
+                "type": "Expression"
+              },
+              "type": "Query"
+            }
+          ]
+        },
+        "linkedService": {
+          "name": "dwh_metadata",
+          "properties": {
+            "type": "DataWarehouse",
+            "typeProperties": {
+              "artifactId": "b190a514-ff9f-4ee1-a1e1-0db6e7e0ff98",
+              "endpoint": "rdtlpqrjbtvexhmk4sv32b4glq-nk2vssvbuogujczra5lfmdnrja.datawarehouse.fabric.microsoft.com",
+              "workspaceId": "4a59b56a-a3a1-448d-8b31-0756560db148"
+            },
+            "annotations": []
+          },
+          "objectId": "b190a514-ff9f-4ee1-a1e1-0db6e7e0ff98"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Save_run_results",
+        "description": "placeholder",
+        "dependsOn": [
+          {
+            "activity": "Copy_starlink_data",
+            "dependencyConditions": [
+              "Completed"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "Script",
+        "typeProperties": {
+          "scripts": [
+            {
+              "text": {
+                "value": "select 1 from 1",
+                "type": "Expression"
+              },
+              "type": "NonQuery"
+            }
+          ]
+        },
+        "linkedService": {
+          "name": "dwh_metadata",
+          "properties": {
+            "type": "DataWarehouse",
+            "typeProperties": {
+              "artifactId": "b190a514-ff9f-4ee1-a1e1-0db6e7e0ff98",
+              "endpoint": "rdtlpqrjbtvexhmk4sv32b4glq-nk2vssvbuogujczra5lfmdnrja.datawarehouse.fabric.microsoft.com",
+              "workspaceId": "4a59b56a-a3a1-448d-8b31-0756560db148"
+            },
+            "annotations": []
+          },
+          "objectId": "b190a514-ff9f-4ee1-a1e1-0db6e7e0ff98"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Save_run_start",
+        "description": "placeholder",
+        "dependsOn": []
+      }
+    ]
+  }
+}
